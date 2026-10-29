@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/revision-saved.v1.schema.json",
+  "title": "RevisionSaved v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "eventId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "type": {
+      "const": "RevisionSaved"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "tenantId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "aggregateId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "occurredAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "correlationId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "revisionId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "schemaVersion": {
+          "const": 1
+        }
+      },
+      "required": [
+        "revisionId",
+        "schemaVersion"
+      ]
+    }
+  },
+  "required": [
+    "eventId",
+    "type",
+    "schemaVersion",
+    "tenantId",
+    "aggregateId",
+    "sequence",
+    "occurredAt",
+    "correlationId",
+    "payload"
+  ]
+}

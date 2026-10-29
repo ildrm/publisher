@@ -1,0 +1,23 @@
+%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012.
+%% C4-CON-001; scope: platform containers and external systems; FR-DOC-002, FR-FMT-001, FR-CAT-001, FR-COM-001. SOURCE NOT RENDER-VALIDATED.
+%% Legend: subgraph is trust/deployment boundary; solid arrow active candidate; dashed arrow deferred or optional.
+flowchart LR
+ U[Author, staff, reader] --> Web[Web app: Studio, publisher, storefront, reader]
+ subgraph Platform[Platform private boundary]
+ Web -->|authenticated requests| API[Modular application API]
+ API --> DB[(Relational database: documents, rights, orders, ledger, outbox)]
+ API -->|scoped private objects| Obj[(Private versioned object storage)]
+ API -->|outbox relay| Q[Durable job queue]
+ Q --> W[Isolated import and conversion workers]
+ W -->|versioned artifacts| Obj
+ API -->|released listing only| Index[(Public search index)]
+ API --> Cache[(Optional scoped cache)]
+ API --> Obs[Logs, metrics, traces and alerts]
+ W --> Obs
+ RT[Realtime collaboration - deferred] -.-> API
+ G[Optional 3D asset worker - P1] -.-> Obj
+ Analytics[Consent-governed analytics] -.-> API
+ end
+ Web --> CDN[Public approved assets CDN]
+ API --> Ext[Payment, email, printer providers]
+ API -.-> AI[AI provider - explicit opt-in, deferred]

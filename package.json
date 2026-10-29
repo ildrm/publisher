@@ -1,0 +1,36 @@
+{
+  "name": "publisher-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=26.0.0 <27"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "tsc --noEmit && vite build --config apps/web/vite.config.ts",
+    "start": "python3 apps/api/main.py serve",
+    "test": "python3 -m unittest discover -s tests -v && node --test tests/*.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "node tests/e2e.mjs",
+    "test:i18n": "node tests/i18n.e2e.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "@tiptap/react": "3.32.1",
+    "@tiptap/pm": "3.32.1",
+    "@tiptap/starter-kit": "3.32.1",
+    "@tiptap/core": "3.32.1"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "vite": "8.3.4",
+    "@vitejs/plugin-react": "5.2.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.2.3",
+    "@types/node": "26.6.5",
+    "playwright": "1.64.1",
+    "@axe-core/playwright": "4.14.0"
+  }
+}

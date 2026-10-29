@@ -1,0 +1,107 @@
+[
+  {
+    "code": "en",
+    "nativeName": "English",
+    "englishName": "English",
+    "direction": "ltr",
+    "formatLocale": "en"
+  },
+  {
+    "code": "zh",
+    "nativeName": "简体中文",
+    "englishName": "Mandarin Chinese",
+    "direction": "ltr",
+    "formatLocale": "zh-CN"
+  },
+  {
+    "code": "hi",
+    "nativeName": "हिन्दी",
+    "englishName": "Hindi",
+    "direction": "ltr",
+    "formatLocale": "hi-IN"
+  },
+  {
+    "code": "es",
+    "nativeName": "Español",
+    "englishName": "Spanish",
+    "direction": "ltr",
+    "formatLocale": "es"
+  },
+  {
+    "code": "ar",
+    "nativeName": "العربية",
+    "englishName": "Arabic",
+    "direction": "rtl",
+    "formatLocale": "ar"
+  },
+  {
+    "code": "fr",
+    "nativeName": "Français",
+    "englishName": "French",
+    "direction": "ltr",
+    "formatLocale": "fr"
+  },
+  {
+    "code": "bn",
+    "nativeName": "বাংলা",
+    "englishName": "Bengali",
+    "direction": "ltr",
+    "formatLocale": "bn-BD"
+  },
+  {
+    "code": "pt",
+    "nativeName": "Português",
+    "englishName": "Portuguese",
+    "direction": "ltr",
+    "formatLocale": "pt"
+  },
+  {
+    "code": "id",
+    "nativeName": "Bahasa Indonesia",
+    "englishName": "Indonesian",
+    "direction": "ltr",
+    "formatLocale": "id-ID"
+  },
+  {
+    "code": "ur",
+    "nativeName": "اردو",
+    "englishName": "Urdu",
+    "direction": "rtl",
+    "formatLocale": "ur-PK"
+  },
+  {
+    "code": "ru",
+    "nativeName": "Русский",
+    "englishName": "Russian",
+    "direction": "ltr",
+    "formatLocale": "ru"
+  },
+  {
+    "code": "de",
+    "nativeName": "Deutsch",
+    "englishName": "German",
+    "direction": "ltr",
+    "formatLocale": "de"
+  },
+  {
+    "code": "ja",
+    "nativeName": "日本語",
+    "englishName": "Japanese",
+    "direction": "ltr",
+    "formatLocale": "ja-JP"
+  },
+  {
+    "code": "pcm",
+    "nativeName": "Naijá",
+    "englishName": "Nigerian Pidgin",
+    "direction": "ltr",
+    "formatLocale": "en-NG"
+  },
+  {
+    "code": "fa",
+    "nativeName": "فارسی",
+    "englishName": "Persian",
+    "direction": "rtl",
+    "formatLocale": "fa-IR"
+  }
+]

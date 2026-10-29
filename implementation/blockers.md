@@ -1,0 +1,14 @@
+# Blocked inputs and activation boundaries
+
+Version 0.2 · 2026-10-29 · Local implementation checkpoint; no production or human specialist approval. Owner: Engineering Lead; consulted/review perspectives: Product, Requirements, Architecture, Document Engineering, Security, Accessibility, QA, SRE, Editorial and Finance. Actual approval: pending where required. The user's requested interface-language implementation is authorized and is no longer an English-only missing feature. Strict build, 47 Python/9 JS application tests, separate reference tests and both authoring/15-language browser suites passed. The boundaries below remain open despite those local results.
+
+| ID | Blocked outcome and exact missing prerequisite | Owner / independent work |
+|---|---|---|
+| BLK-001 | Production/pilot durability: approved failure model, replication, encrypted storage/backup and regional restore evidence absent. | SRE/Security; local tests and backup CLI implemented. |
+| BLK-002 | Real email delivery and production identity: provider, processing terms, deliverability and privileged-role MFA flow absent. | Identity/Security; local verification/recovery works. Staff roles must require MFA before they exist. |
+| BLK-003 | Commercial publication: qualified rights/contract, launch jurisdiction, publisher signatories, print profiles and real approvals absent. | Publishing/Legal/Production; implement scoped workflow with synthetic evidence next; never auto-approve legal assertions. |
+| BLK-004 | Live commerce/payout: market/provider eligibility, tax/refund/royalty terms and actual authorization absent. | Finance/Commerce; future local signed-event simulator must stay clearly sandbox-only. No money code is implemented yet. |
+| BLK-005 | G3 output assurance: EPUBCheck/Java runtime, accepted print preset, PDF/UA/PDF/X validation and physical proof unavailable; upload malware/kernel sandbox not configured. | Conversion/Security; Markdown/DOCX/text/HTML portability and structural import checks are implemented only. |
+| BLK-006 | Approved P1/P2 scope: grouped unapproved capabilities lack atomic fields/contracts, budgets and actual scope acceptance. | Product/Requirements; extension boundaries preserved, no AI or realtime service is enabled. |
+| BLK-007 | Independent accessibility, screen-reader, real IME/mobile device, security penetration and cost/SLO reviews absent. All 15 translation catalogs are implementer drafts without native human approval; regional variant and wording review remains a pilot gate. | Accessibility/QA/SRE/Localization; all-language Chrome switching passed at fixed desktop/mobile viewports, and Arabic/Urdu axe scans reported zero violations. These remain narrower than independent/manual/device review. See multilingual-review.md. |
+| BLK-008 | Hosted CI/cloud environment and action digest approval absent. | DevOps; workflow exists but hosted run/deployment not observed. Docker was not required for local boot. |

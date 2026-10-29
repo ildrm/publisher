@@ -1,0 +1,10 @@
+{
+  "url": "http://127.0.0.1:8123/app/projects/7449b518-7439-4f67-afd2-1b3759ecd29e",
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds"
+    }
+  ]
+}

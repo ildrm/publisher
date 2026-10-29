@@ -1,0 +1,18 @@
+%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012.
+%% EVT-001; scope: consistency and event delivery; FR-DOC-002, FR-PUB-002, FR-COM-001, FR-FIN-001. SOURCE NOT RENDER-VALIDATED.
+%% Legend: solid = local transaction or action; dashed = async at-least-once event; D = dead-letter; R = reconciliation.
+flowchart LR
+ Cmd[Idempotent command with expected version] --> TX[Local transaction: domain change + outbox]
+ TX --> DB[(Domain database)]
+ TX --> OB[(Versioned outbox)]
+ OB --> Relay[Outbox relay]
+ Relay -.-> Q[Durable event queue]
+ Q -.-> Consumer[Consumer with inbox and unique event key]
+ Consumer --> State[(Consumer state and audit)]
+ Consumer -.->|retry with backoff| Q
+ Consumer -.->|poison or exhausted| DLQ[D: dead-letter queue]
+ DLQ --> Ops[Operator investigation]
+ Provider[Payment provider] -.->|verified webhook| Consumer
+ Reconcile[R: scheduled reconciliation] --> Provider
+ Reconcile --> State
+ Reconcile --> Ops

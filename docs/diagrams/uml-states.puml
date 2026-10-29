@@ -1,0 +1,221 @@
+' Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012.
+@startuml
+' STM-01 Working copy and immutable revisions; scope: editor save and restore; FR-DOC-002, FR-DOC-003. SOURCE NOT RENDER-VALIDATED.
+title STM-01 Working copy and immutable revisions
+[*] --> CleanWorkingCopy : open an immutable revision
+CleanWorkingCopy --> DirtyWorkingCopy : author edits locally
+DirtyWorkingCopy --> Saving : submit expected revision and operation key
+Saving --> CleanWorkingCopy : durable commit creates new immutable revision; no further edits
+Saving --> DirtyWorkingCopy : commit succeeds but newer local edits remain
+Saving --> Unsaved : failure or stale version
+Unsaved --> Saving : explicit retry after review
+CleanWorkingCopy --> Restoring : select prior immutable revision with expected current version
+Restoring --> CleanWorkingCopy : commit creates a new immutable revision
+Restoring --> Unsaved : conflict or failed restore; history unchanged
+note right of CleanWorkingCopy
+Every acknowledged revision is immutable.
+Further edits modify a separate working copy;
+restore creates another revision, not an overwrite.
+end note
+note right of Unsaved
+Local recovery is offered only when verified;
+otherwise warn and offer copy/export where possible.
+end note
+legend right
+Arrow = permitted transition with guard or action.
+Unlisted transitions are rejected and audited where appropriate.
+endlegend
+@enduml
+
+@startuml
+' STM-02 Submission; scope: named object lifecycle; FR-PUB-001. SOURCE NOT RENDER-VALIDATED.
+title STM-02 Submission
+[*] --> Draft
+Draft --> Submitted : author submits frozen revision and declarations
+Submitted --> Screening : editorial assignment
+Screening --> InReview : eligible
+InReview --> Accepted : authorized decision
+InReview --> Rejected : authorized decision + reason
+InReview --> ReviseRequested : authorized decision + reason
+Submitted --> Withdrawn : authorized withdrawal
+Screening --> Withdrawn : authorized withdrawal
+InReview --> Withdrawn : authorized withdrawal
+ReviseRequested --> [*] : new submission references new revision
+Accepted --> [*]
+Rejected --> [*]
+Withdrawn --> [*]
+legend right
+Arrow = permitted transition with guard or action.
+Unlisted transitions are rejected and audited where appropriate.
+endlegend
+@enduml
+
+@startuml
+' STM-03 Editorial task; scope: named object lifecycle; FR-PUB-001. SOURCE NOT RENDER-VALIDATED.
+title STM-03 Editorial task
+[*] --> Open
+Open --> Assigned : manager assigns scope
+Assigned --> InProgress : assignee starts
+InProgress --> Completed : checklist complete
+Assigned --> Open : reassign
+InProgress --> Open : reassign with reason
+Open --> Cancelled : authorized cancellation
+Assigned --> Cancelled : authorized cancellation
+InProgress --> Cancelled : authorized cancellation
+Completed --> [*]
+Cancelled --> [*]
+legend right
+Arrow = permitted transition with guard or action.
+Unlisted transitions are rejected and audited where appropriate.
+endlegend
+@enduml
+
+@startuml
+' STM-04 Edition publication; scope: named object lifecycle; FR-PUB-002, FR-RGT-001. SOURCE NOT RENDER-VALIDATED.
+title STM-04 Edition publication
+[*] --> Preparation
+Preparation --> ProofPending : versioned rendition prepared
+ProofPending --> Approved : exact approvals and proof recorded
+Approved --> Scheduled : authorized schedule and current rights
+Scheduled --> Released : rights and approvals current and no hold
+Preparation --> Held : authorized hold
+ProofPending --> Held : authorized hold
+Approved --> Held : authorized hold
+Scheduled --> Held : authorized hold
+Released --> Held : authorized hold
+Released --> Withdrawn : authorized takedown
+Held --> Preparation : clear pre-release hold; return to recorded preparation state
+Held --> ProofPending : clear pre-release hold; return to recorded proof state
+Held --> Approved : clear pre-release hold; return to recorded approval state if still valid
+Held --> Scheduled : clear pre-release hold; recorded scheduled state and all gates rechecked
+Held --> Released : previously released only; clear hold and recheck rights, approvals and remedies
+Held --> Withdrawn : authorized withdrawal
+Released --> CorrectionProposed : create a new release version; original retained
+Withdrawn --> [*]
+legend right
+Arrow = permitted transition with guard or action.
+Unlisted transitions are rejected and audited where appropriate.
+endlegend
+@enduml
+
+@startuml
+' STM-05 Conversion job; scope: job lifecycle and attempt fencing; FR-FMT-001. SOURCE NOT RENDER-VALIDATED.
+title STM-05 Conversion job
+[*] --> Queued
+Queued --> Running : lease and fresh fencing token
+Running --> Validating : attempt output staged privately
+Validating --> Succeeded : checks pass; fenced artifact and report committed
+Running --> Failed : terminal failure; retain prior artifact
+Validating --> Failed : validation fails; retain prior artifact
+Queued --> Cancelled : authorized cancellation
+Running --> Cancelled : cancel and invalidate worker lease/token
+Validating --> Cancelled : cancel and fence finalization
+Running --> Queued : transient retry schedules new attempt and fencing token
+Validating --> Queued : transient retry schedules new attempt and fencing token
+Failed --> [*] : terminal job; retry/correction creates new authorized job
+Cancelled --> [*] : terminal job; restart requires a new authorized job
+Succeeded --> [*]
+note right of Cancelled
+A stale worker cannot publish an artifact after cancellation.
+Attempts have separate identifiers and staged outputs.
+Dead-letter delivery is an operational queue, not a job state.
+end note
+legend right
+Arrow = permitted transition with guard or action.
+Unlisted transitions are rejected and audited where appropriate.
+endlegend
+@enduml
+
+@startuml
+' STM-06 Order and payment; scope: named object lifecycle; FR-COM-001. SOURCE NOT RENDER-VALIDATED.
+title STM-06 Order and payment
+[*] --> Pending
+Pending --> Paid : verified confirmed payment
+Pending --> Failed : verified failure
+Pending --> Uncertain : provider outcome ambiguous
+Uncertain --> Paid : reconciliation confirms payment
+Uncertain --> Failed : reconciliation confirms failure
+Paid --> Entitled : grant once for eligible product
+Entitled --> RefundRequested : customer requests refund
+RefundRequested --> Refunded : approval and provider confirmation
+RefundRequested --> Entitled : request denied
+Paid --> Disputed : chargeback or dispute
+Entitled --> Disputed : chargeback or dispute
+Disputed --> Refunded : settlement and compensation
+Disputed --> Entitled : dispute resolved with access retained
+note right of Uncertain
+Reconcile before retrying capture.
+end note
+legend right
+Arrow = permitted transition with guard or action.
+Unlisted transitions are rejected and audited where appropriate.
+endlegend
+@enduml
+
+@startuml
+' STM-07 Royalty statement and payout; scope: named object lifecycle; FR-FIN-001. SOURCE NOT RENDER-VALIDATED.
+title STM-07 Royalty statement and payout
+[*] --> Calculated
+Calculated --> Reviewed : finance verifies ledger and rules
+Reviewed --> Eligible : cleared payable, no hold
+Eligible --> Initiated : independent approval and unique payout key
+Initiated --> Paid : provider settlement reconciled
+Initiated --> Uncertain : ambiguous outcome
+Uncertain --> Paid : reconciliation confirms payment
+Uncertain --> Failed : reconciliation confirms failure
+Initiated --> Failed : verified failure
+Failed --> Eligible : approved retry after reconciliation
+Eligible --> Held : dispute or rights hold
+Held --> Reviewed : hold cleared and recalculated
+Paid --> [*]
+legend right
+Arrow = permitted transition with guard or action.
+Unlisted transitions are rejected and audited where appropriate.
+endlegend
+@enduml
+
+@startuml
+' STM-08 Rights and contract; scope: named object lifecycle; FR-RGT-001. SOURCE NOT RENDER-VALIDATED.
+title STM-08 Rights and contract
+[*] --> Draft
+Draft --> Proposed : evidence and scoped terms recorded
+Proposed --> Active : authorized approval and execution verified
+Active --> Expired : end of term
+Active --> Revoked : authorized revocation
+Active --> Disputed : rights issue or hold
+Disputed --> Active : authorized resolution and recheck
+Disputed --> Revoked : authorized resolution
+Expired --> [*]
+Revoked --> [*]
+note right of Active
+Scope includes parties, format, language,
+territory, channel and effective interval.
+end note
+legend right
+Arrow = permitted transition with guard or action.
+Unlisted transitions are rejected and audited where appropriate.
+endlegend
+@enduml
+
+@startuml
+' STM-09 Takedown; scope: named object lifecycle; FR-PUB-002, FR-OPS-001. SOURCE NOT RENDER-VALIDATED.
+title STM-09 Takedown
+[*] --> Reported
+Reported --> Reviewed : authorized reviewer evaluates
+Reviewed --> Held : credible issue and authorized hold
+Reviewed --> Closed : no action with reason
+Held --> Resolution : preserve evidence and review appeal
+Resolution --> Reinstated : rights and approvals rechecked
+Resolution --> Withdrawn : authorized takedown confirmed
+Reinstated --> [*]
+Withdrawn --> [*]
+Closed --> [*]
+note right of Held
+Existing customer remedies depend on
+contract and jurisdiction-specific policy.
+end note
+legend right
+Arrow = permitted transition with guard or action.
+Unlisted transitions are rejected and audited where appropriate.
+endlegend
+@enduml

@@ -1,0 +1,267 @@
+' Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012.
+@startuml
+' SEQ-01 Import; scope: workflow interaction; FR-IMP-001. SOURCE NOT RENDER-VALIDATED.
+title SEQ-01 Import
+actor Author
+participant UI
+participant API
+participant Scanner
+participant Worker
+database Store
+Author -> UI: Select file and import
+UI -> API: Upload with scoped project
+API -> Scanner: Validate type, size, malware
+alt valid and safe
+ Scanner -> Worker: Parse in isolated worker
+ Worker -> Store: Stage canonical preview and warnings
+ Worker --> UI: Report unsupported structures
+ Author -> UI: Confirm import
+ UI -> API: Commit reviewed import
+ API -> Store: Create new revision idempotently
+else rejected or failed
+ Scanner --> UI: Actionable failure; source unchanged
+end
+legend right
+Solid arrow = request; dashed arrow = response.
+Authorization, audit and error handling are required at each relevant boundary.
+endlegend
+@enduml
+
+@startuml
+' SEQ-02 Save; scope: workflow interaction; FR-DOC-002. SOURCE NOT RENDER-VALIDATED.
+title SEQ-02 Save
+actor Author
+participant Editor
+participant API
+database Store
+Author -> Editor: Edit document
+Editor -> Editor: Show unsaved / saving
+Editor -> API: Save(expected revision, operation key)
+API -> Store: Lock access epoch and current pointer; check permission
+alt permission denied
+ API --> Editor: Deny without disclosing receipt
+else permission current
+ API -> Store: Look up same actor, key and request receipt
+ alt matching receipt exists
+  Store --> API: Return original committed result
+  API --> Editor: Acknowledge same revision
+ else changed payload for key
+  API --> Editor: Reject conflicting key reuse
+ else new request
+  API -> Store: Compare version; commit immutable revision, pointer, receipt and outbox
+  alt committed durably
+   Store --> API: Committed revision
+   API --> Editor: Acknowledge revision
+   Editor --> Author: Saved only if no newer local edits
+  else stale or failed
+   API --> Editor: Reject with recovery status
+   Editor --> Author: Not saved; offer verified local recovery or copy
+  end
+ end
+end
+legend right
+Solid arrow = request; dashed arrow = response.
+Authorization, audit and error handling are required at each relevant boundary.
+endlegend
+@enduml
+
+@startuml
+' SEQ-03 Reconnect; scope: workflow interaction; FR-DOC-002, FR-IAM-002. SOURCE NOT RENDER-VALIDATED.
+title SEQ-03 Reconnect
+actor Author
+participant Editor
+participant API
+database Store
+Author -> Editor: Edit while disconnected
+Editor --> Author: Not saved
+Author -> Editor: Reconnect
+Editor -> API: Request current revision and permission
+API -> Store: Check grant and current revision
+alt access revoked
+ API --> Editor: Deny fresh read/write
+else stale local edit
+ API --> Editor: Return version conflict
+ Editor --> Author: Review unsynced content if available; no automatic merge
+else matching revision
+ Editor -> API: Retry idempotent save
+ API -> Store: Commit then acknowledge
+end
+legend right
+Solid arrow = request; dashed arrow = response.
+Authorization, audit and error handling are required at each relevant boundary.
+endlegend
+@enduml
+
+@startuml
+' SEQ-04 Restore; scope: workflow interaction; FR-DOC-003. SOURCE NOT RENDER-VALIDATED.
+title SEQ-04 Restore
+actor Author
+participant UI
+participant API
+database Store
+Author -> UI: Select older snapshot
+UI -> API: Restore(snapshot, expected current revision)
+API -> Store: Check authorization and expected version
+alt current revision matches
+ Store -> Store: Create new revision from snapshot
+ Store --> UI: New revision; previous versions retained
+else stale or unauthorized
+ Store --> UI: Reject; no revision changed
+end
+legend right
+Solid arrow = request; dashed arrow = response.
+Authorization, audit and error handling are required at each relevant boundary.
+endlegend
+@enduml
+
+@startuml
+' SEQ-05 Export; scope: workflow interaction; FR-EXP-001, FR-FMT-001. SOURCE NOT RENDER-VALIDATED.
+title SEQ-05 Export
+actor Author
+participant UI
+participant API
+queue Jobs
+participant Worker
+database Artifacts
+Author -> UI: Export selected version
+UI -> API: Authorized export with idempotency key
+API -> Jobs: Queue frozen inputs and profile
+Jobs -> Worker: Deliver job
+Worker -> Worker: Validate and convert in isolation; stage per attempt
+Worker -> Worker: Validate output and check current lease / fencing token
+alt success and authorization current
+ Worker -> Artifacts: Register artifact, hashes and report atomically
+ Worker --> UI: Ready with scoped download
+else failure
+ Worker --> UI: Failure and retry option; prior artifact retained
+end
+legend right
+Solid arrow = request; dashed arrow = response.
+Authorization, audit and error handling are required at each relevant boundary.
+endlegend
+@enduml
+
+@startuml
+' SEQ-06 Submission to release; scope: workflow interaction; FR-PUB-001, FR-PUB-002, FR-RGT-001. SOURCE NOT RENDER-VALIDATED.
+title SEQ-06 Submission to release
+actor Author
+actor Editor
+participant API
+participant Rights
+participant Production
+participant Catalog
+Author -> API: Submit frozen revision and declarations
+API -> Editor: Assign review
+Editor -> API: Record decision with reason
+alt revise or reject
+ API --> Author: Notify decision; retain project
+else accepted
+ Editor -> Production: Prepare versioned rendition and proof
+ Production -> API: Record artifact-specific approvals
+ API -> Rights: Check current scoped grants and hold
+ alt valid approvals and rights
+  API -> Catalog: Release approved listing and event
+ else missing or stale
+  API --> Editor: Block release and show reason
+ end
+end
+legend right
+Solid arrow = request; dashed arrow = response.
+Authorization, audit and error handling are required at each relevant boundary.
+endlegend
+@enduml
+
+@startuml
+' SEQ-07 Purchase; scope: workflow interaction; FR-COM-001. SOURCE NOT RENDER-VALIDATED.
+title SEQ-07 Purchase
+actor Reader
+participant Storefront
+participant Commerce
+participant Provider
+participant Entitlements
+Reader -> Storefront: Start checkout
+Storefront -> Commerce: Create order with idempotency key
+Commerce -> Provider: Request hosted payment
+Provider --> Commerce: Signed payment event
+Commerce -> Commerce: Verify signature, amount, currency, event key
+alt verified and eligible
+ Commerce -> Entitlements: Grant once for purchased product
+ Entitlements --> Reader: Available in library
+else failed or uncertain
+ Commerce --> Reader: Failure or pending; do not pay again yet
+end
+legend right
+Solid arrow = request; dashed arrow = response.
+Authorization, audit and error handling are required at each relevant boundary.
+endlegend
+@enduml
+
+@startuml
+' SEQ-08 Webhook and refund; scope: workflow interaction; FR-COM-001, FR-FIN-001. SOURCE NOT RENDER-VALIDATED.
+title SEQ-08 Webhook and refund
+participant Provider
+participant Webhook
+participant Ledger
+participant Finance
+Provider -> Webhook: Signed sale or refund event
+Webhook -> Webhook: Verify signature and unique event key
+alt valid new event
+ Webhook -> Ledger: Post balanced entry or linked compensation
+ Ledger --> Finance: Reconciliation record
+else duplicate or invalid
+ Webhook --> Provider: Acknowledge duplicate or reject invalid
+end
+Finance -> Provider: Reconcile ambiguous settlement before retry
+legend right
+Solid arrow = request; dashed arrow = response.
+Authorization, audit and error handling are required at each relevant boundary.
+endlegend
+@enduml
+
+@startuml
+' SEQ-09 Royalty and payout; scope: workflow interaction; FR-FIN-001. SOURCE NOT RENDER-VALIDATED.
+title SEQ-09 Royalty and payout
+participant Sale
+participant Royalty
+participant Ledger
+actor Finance
+participant Provider
+Sale -> Royalty: Verified sale and rule version
+Royalty -> Ledger: Balanced attributable royalty posting once
+Finance -> Ledger: Review cleared payable and holds
+alt approved and amount within balance
+ Finance -> Provider: Initiate idempotent payout
+ Provider --> Finance: Status or uncertainty
+ Finance -> Ledger: Reconcile and record outcome
+else insufficient funds or dispute
+ Ledger --> Finance: Block and record reason
+end
+legend right
+Solid arrow = request; dashed arrow = response.
+Authorization, audit and error handling are required at each relevant boundary.
+endlegend
+@enduml
+
+@startuml
+' SEQ-10 3D artifact; scope: workflow interaction; FR-3D-001, FR-CAT-001.2. SOURCE NOT RENDER-VALIDATED.
+title SEQ-10 3D artifact
+actor Production
+participant API
+participant Worker
+database Assets
+participant Viewer
+Production -> API: Request optional 3D from approved inputs
+API -> Worker: Geometry, cover, binding and source versions
+Worker -> Worker: Validate inputs and license
+alt verified geometry
+ Worker -> Assets: Store versioned model and input hashes
+ Viewer -> Assets: Load authorized approved model
+ Viewer --> Production: Show dimensions and non-proof notice
+else missing or unsupported
+ Viewer --> Production: Show accessible 2D and text or labeled illustration
+end
+legend right
+Solid arrow = request; dashed arrow = response.
+Authorization, audit and error handling are required at each relevant boundary.
+endlegend
+@enduml

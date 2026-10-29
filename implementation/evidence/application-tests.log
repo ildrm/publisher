@@ -1,0 +1,73 @@
+
+> publisher-studio@0.1.0 test
+> python3 -m unittest discover -s tests -v && node --test tests/*.test.mjs
+
+test_100000_words_unicode_roundtrip (test_application.AppTests.test_100000_words_unicode_roundtrip) ... ok
+test_backup_failure_removes_partial_target_and_restored_database_stays_private (test_application.AppTests.test_backup_failure_removes_partial_target_and_restored_database_stays_private) ... ok
+test_backup_restore_and_audit_do_not_leak_manuscript_text (test_application.AppTests.test_backup_restore_and_audit_do_not_leak_manuscript_text) ... ok
+test_concurrent_initializers_observe_only_complete_session_keys (test_application.AppTests.test_concurrent_initializers_observe_only_complete_session_keys) ... ok
+test_concurrent_stale_save_has_one_winner (test_application.AppTests.test_concurrent_stale_save_has_one_winner) ... ok
+test_creation_receipt_and_key_collision (test_application.AppTests.test_creation_receipt_and_key_collision) ... ok
+test_cross_tenant_denials_and_public_privacy (test_application.AppTests.test_cross_tenant_denials_and_public_privacy) ... ok
+test_csrf_origin_and_anonymous_access (test_application.AppTests.test_csrf_origin_and_anonymous_access) ... ok
+test_docx_breaks_tabs_optional_marks_and_ordered_list_fidelity (test_application.AppTests.test_docx_breaks_tabs_optional_marks_and_ordered_list_fidelity) ... ok
+test_docx_preserves_manuscript_languages_bidi_and_deterministic_bytes (test_application.AppTests.test_docx_preserves_manuscript_languages_bidi_and_deterministic_bytes) ... ok
+test_export_reauthorizes_before_promotion (test_application.AppTests.test_export_reauthorizes_before_promotion) ... ok
+test_export_unsupported_format_fails_closed (test_application.AppTests.test_export_unsupported_format_fails_closed) ... ok
+test_failed_export_preserves_previous_artifact (test_application.AppTests.test_failed_export_preserves_previous_artifact) ... ok
+test_hidden_filename_import_keeps_a_nonempty_chapter_title (test_application.AppTests.test_hidden_filename_import_keeps_a_nonempty_chapter_title) ... ok
+test_import_rejects_path_traversal_active_xml_and_archive_bomb (test_application.AppTests.test_import_rejects_path_traversal_active_xml_and_archive_bomb) ... ok
+test_import_review_is_explicit_idempotent_and_preserves_original (test_application.AppTests.test_import_review_is_explicit_idempotent_and_preserves_original) ... ok
+test_interrupted_job_is_failed_explicitly_after_restart (test_application.AppTests.test_interrupted_job_is_failed_explicitly_after_restart) ... ok
+test_invalid_xml_source_is_retained_and_never_exported_as_a_broken_docx (test_application.AppTests.test_invalid_xml_source_is_retained_and_never_exported_as_a_broken_docx) ... ok
+test_login_does_not_lock_other_writes_or_reuse_credentials_after_reset (test_application.AppTests.test_login_does_not_lock_other_writes_or_reuse_credentials_after_reset) ... ok
+test_lost_response_replays_original_even_after_later_commit (test_application.AppTests.test_lost_response_replays_original_even_after_later_commit) ... ok
+test_malformed_structures_and_unknown_fields_are_safe_validation_errors (test_application.AppTests.test_malformed_structures_and_unknown_fields_are_safe_validation_errors) ... ok
+test_malformed_unicode_and_snapshot_types_fail_without_new_revisions (test_application.AppTests.test_malformed_unicode_and_snapshot_types_fail_without_new_revisions) ... ok
+test_malformed_worker_output_and_interrupted_jobs_cannot_publish_artifacts (test_application.AppTests.test_malformed_worker_output_and_interrupted_jobs_cannot_publish_artifacts) ... ok
+test_portable_bundle_preserves_complete_canonical_source_and_metadata (test_application.AppTests.test_portable_bundle_preserves_complete_canonical_source_and_metadata) ... ok
+test_private_export_portability_reproducible_docx_and_html_safe (test_application.AppTests.test_private_export_portability_reproducible_docx_and_html_safe) ... ok
+test_process_exit_after_acknowledgement_preserves_revision (test_application.AppTests.test_process_exit_after_acknowledgement_preserves_revision) ... ok
+test_rate_limit_has_bounded_window (test_application.AppTests.test_rate_limit_has_bounded_window) ... ok
+test_real_http_login_cookie_and_no_credential_storage (test_application.AppTests.test_real_http_login_cookie_and_no_credential_storage) ... ok
+test_recovery_invalidates_sessions_and_consumes_token (test_application.AppTests.test_recovery_invalidates_sessions_and_consumes_token) ... ok
+test_registration_verification_is_single_use_and_required (test_application.AppTests.test_registration_verification_is_single_use_and_required) ... ok
+test_reorder_exact_members_and_stale_version (test_application.AppTests.test_reorder_exact_members_and_stale_version) ... ok
+test_restore_creates_new_revision_and_history_is_immutable (test_application.AppTests.test_restore_creates_new_revision_and_history_is_immutable) ... ok
+test_save_http_etag_and_reload (test_application.AppTests.test_save_http_etag_and_reload) ... ok
+test_seed_is_repeatable_without_overwriting_existing_revisions (test_application.AppTests.test_seed_is_repeatable_without_overwriting_existing_revisions) ... ok
+test_static_traversal_security_headers_and_unknown_operations (test_application.AppTests.test_static_traversal_security_headers_and_unknown_operations) ... ok
+test_untrusted_ast_and_duplicate_ids_fail_without_mutation (test_application.AppTests.test_untrusted_ast_and_duplicate_ids_fail_without_mutation) ... ok
+test_viewer_no_write_non_owner_no_grant_and_revocation_before_replay (test_application.AppTests.test_viewer_no_write_non_owner_no_grant_and_revocation_before_replay) ... ok
+test_descriptors_preserve_source_feature_keys_for_later_language_switch (test_localization.CatalogTests.test_descriptors_preserve_source_feature_keys_for_later_language_switch) ... ok
+test_localizer_never_recurses_into_manuscript_or_author_names (test_localization.CatalogTests.test_localizer_never_recurses_into_manuscript_or_author_names) ... ok
+test_regional_negotiation_quality_and_invalid_input (test_localization.CatalogTests.test_regional_negotiation_quality_and_invalid_input) ... ok
+test_top_fourteen_and_persian_have_complete_nonempty_catalogs (test_localization.CatalogTests.test_top_fourteen_and_persian_have_complete_nonempty_catalogs) ... ok
+test_account_preference_is_authenticated_csrf_protected_and_persisted (test_localization.LocaleApiTests.test_account_preference_is_authenticated_csrf_protected_and_persisted) ... ok
+test_dynamic_validation_has_language_neutral_parameters (test_localization.LocaleApiTests.test_dynamic_validation_has_language_neutral_parameters) ... ok
+test_errors_are_localized_in_every_supported_language (test_localization.LocaleApiTests.test_errors_are_localized_in_every_supported_language) ... ok
+test_preferences_do_not_modify_authored_text_or_manuscript_direction (test_localization.LocaleApiTests.test_preferences_do_not_modify_authored_text_or_manuscript_direction) ... ok
+test_registration_mail_and_default_new_chapter_use_account_ui_locale (test_localization.LocaleApiTests.test_registration_mail_and_default_new_chapter_use_account_ui_locale) ... ok
+test_schema_one_migration_preserves_existing_content_and_null_preference (test_localization.LocaleApiTests.test_schema_one_migration_preserves_existing_content_and_null_preference) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 15.854s
+
+OK
+✔ lost response retries identical body, version and key before later edits (2.438917ms)
+✔ acknowledging an earlier generation never labels newer text saved (13.556959ms)
+✔ concurrent flushes share one request; stale writes require explicit recovery (0.185167ms)
+✔ rejected validation can be corrected without replaying an invalid request (0.158209ms)
+✔ all fourteen global locales plus Persian have complete placeholder-safe catalogs (7.675417ms)
+✔ language negotiation preserves explicit preference and handles regional tags safely (0.095625ms)
+✔ device persistence is confirmed only when preference storage can read back the selected locale (0.186375ms)
+✔ numbers dates plural forms and source message parameters use the selected locale (57.791709ms)
+✔ warning descriptors retranslate feature lists instead of freezing prior-language prose (1.982125ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 234.072667

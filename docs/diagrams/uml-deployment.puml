@@ -1,0 +1,49 @@
+' Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012.
+@startuml
+' UML-DEP-001 scope: proposed environment and network boundaries. FR-OPS-001, NFR-SEC-001, NFR-REL-003. SOURCE NOT RENDER-VALIDATED.
+node "Client device" as client {
+ artifact "Web browser" as browser
+}
+cloud "Public network" as internet
+node "Cloud environment (per stage)" as cloud {
+ node "Public edge" as edge {
+  node "CDN for approved public assets" as cdn
+  node "Gateway / WAF" as gateway
+ }
+ node "Private application network" as private {
+  node "Application instances" as app
+  database "Relational database + outbox" as db
+  queue "Durable queue" as queue
+  node "Isolated conversion worker" as worker
+  database "Private object storage" as object
+  node "Secrets manager" as secrets
+  node "Monitoring and audit" as monitor
+ }
+ node "Separate recovery boundary" as backup {
+  database "Encrypted backups and recovery journal" as vault
+ }
+}
+cloud "External provider" as provider
+browser --> internet : HTTPS
+internet --> gateway : requests
+internet --> cdn : public files
+gateway --> app
+app --> db : least privilege
+app --> queue
+app --> object : scoped access
+queue --> worker
+worker --> object : constrained access
+app --> secrets : workload identity
+app --> monitor : redacted telemetry
+worker --> monitor
+ db --> vault : protected backup
+object --> vault : versioned backup
+app --> provider : verified integration
+note bottom of vault
+Backup interval is not an acknowledged-save loss allowance.
+Topology and recovery journal remain unproven.
+end note
+legend right
+Nodes are proposed isolation boundaries, not deployed infrastructure.
+endlegend
+@enduml

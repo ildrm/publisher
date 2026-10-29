@@ -1,0 +1,168 @@
+{
+  "generatedAt": "2026-10-29T11:21:49.734433+00:00",
+  "environment": {
+    "node": "v26.12.0",
+    "npm": "11.20.0",
+    "python": "Python 3.14.5"
+  },
+  "status": "PASS",
+  "commands": [
+    {
+      "name": "build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "startedAt": "2026-10-29T11:21:30.464530+00:00",
+      "exitCode": 0,
+      "seconds": 1.319,
+      "log": "implementation/evidence/build.log"
+    },
+    {
+      "name": "application-tests",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "startedAt": "2026-10-29T11:21:31.783650+00:00",
+      "exitCode": 0,
+      "seconds": 16.627,
+      "log": "implementation/evidence/application-tests.log"
+    },
+    {
+      "name": "documentation",
+      "command": [
+        "python3",
+        "scripts/validate_docs.py"
+      ],
+      "startedAt": "2026-10-29T11:21:48.410636+00:00",
+      "exitCode": 0,
+      "seconds": 0.899,
+      "log": "implementation/evidence/documentation.log"
+    },
+    {
+      "name": "reference-python-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "docs/samples/tests",
+        "-t",
+        "docs/samples",
+        "-v"
+      ],
+      "startedAt": "2026-10-29T11:21:49.309243+00:00",
+      "exitCode": 0,
+      "seconds": 0.08,
+      "log": "implementation/evidence/reference-python-tests.log"
+    },
+    {
+      "name": "reference-js-tests",
+      "command": [
+        "node",
+        "--test",
+        "docs/samples/tests/autosave.test.mjs"
+      ],
+      "startedAt": "2026-10-29T11:21:49.389330+00:00",
+      "exitCode": 0,
+      "seconds": 0.143,
+      "log": "implementation/evidence/reference-js-tests.log"
+    }
+  ],
+  "sourceFilesSha256": {
+    "apps/api/events/revision-saved.v2.schema.json": "f70fc09649ec60d1a9afa1704dabc51b8e9a03a202e600e4584c6908469646e0",
+    "apps/api/main.py": "d4111917310ceec40a36fb7cfdcfc8238a76a2f205e7ddbce907e885a83a587e",
+    "apps/api/openapi.json": "a9d58131316f69d38b38258b07329b1e91c406d017061cc512c48500a13e4ccc",
+    "apps/api/publisher/__init__.py": "681b565747e40a2ee828abae9a9b2d2324d7312eba647b697ae620970ca0f0dd",
+    "apps/api/publisher/database.py": "663b5a5b35d4b93173828137f0d6c56bfec472bdc62adc5d5075771b090c2f23",
+    "apps/api/publisher/domain.py": "ff27a9b73944375cce8dbaf2351f79f14b8881280b12812729bd3a7cbf9651dd",
+    "apps/api/publisher/formats.py": "6698877f3ed7b351f0e38cc6099f4ee06fc1bc993a87aeed04af71dab4f3ed1b",
+    "apps/api/publisher/http.py": "4a1bcea3bf7f442300d04ecc06cea7f3602cd8b174cff9310e77c5be66ee5f59",
+    "apps/api/publisher/identity.py": "d6dd2bbfc5473693e42d3b18eb6e27bdef11fdbf7d0adc9ef8e6237f7d4d94dc",
+    "apps/api/publisher/localization.py": "65f7d285fd2973774a02ebfeed5a49792b3ce34980200acbce964e37c156fd05",
+    "apps/api/publisher/migrations/001_authoring.sql": "e14c8925accae86a1efda518b11935bf39a38bbbc324367005349232ba74eee7",
+    "apps/api/publisher/migrations/002_interface_locales.sql": "6d37b29d021106e7e071b3ddbe4b4ce15f091e159f8ac611ce6511d3d9b1a7a3",
+    "apps/api/publisher/studio.py": "8de81033609144f8adb075e6475f8b57d681f035322b4d64f7910c9501a74e4a",
+    "apps/api/publisher/worker.py": "8fe983b6e905b24c31642d063c7c6d10e4fe3aab83a4813f786ac1f9d5aabb40",
+    "apps/web/src/App.tsx": "03fe7c91180602f8525c828a9f1a72697918768891957879aac0ab0483cedb5a",
+    "apps/web/src/Auth.tsx": "2f6747dd61cac27bc5cbc895f7c1208b21ff1ea859f9b1e43dfe4bcc1df82fe4",
+    "apps/web/src/Dashboard.tsx": "607802e6e60ecb22bcde564212da10d6e158675ce6cb5a31a8b07ad1ed63ab48",
+    "apps/web/src/Editor.tsx": "4ee48c3c8cdfb87c0f50d93d6d4ab8556d289342002317da3e49a14db3b9c58a",
+    "apps/web/src/LanguageSwitcher.tsx": "e4141bb1bd172dc96b03e8d0f04d46011e574730f3dfeca6846f16cb30b0514d",
+    "apps/web/src/Modal.tsx": "115da50f4741252d22046c5de944dcca2aabef8e57e1041f9b62592acab2112c",
+    "apps/web/src/Studio.tsx": "5741c9c0005f987f95d4916973330a99e7e24a9aceb3e7a394c23daa2a273371",
+    "apps/web/src/api.ts": "8fda477da239ec5858459199d9b3c94b78149d675b19b79911fc3f3f9401a798",
+    "apps/web/src/main.tsx": "45a3f8a5204598d918f704d82c71b1a17da1475dcf6cca0f3c4423e8e5e739dd",
+    "apps/web/src/styles.css": "67a6ab2f0f17b97f4ff291a1e33e2ec95b920ca395feacb2f71e51977249f9f0",
+    "apps/web/src/types.ts": "47c553ced19d5614d1db05f5428020cc1dbd16da8cbea2be4105677205a45a4b",
+    "apps/web/vite.config.ts": "aad5300a8a94d8504eced3541af5fdff016d59cfe662e18601f55a16d0072869",
+    "package-lock.json": "3b8ea02e2cc8a6ae57f3d3fa91447a7bed283a889466e64f0a117835825b6c0c",
+    "package.json": "26b88ba373c98448bce96e9d5265036235872bcf512d39011f57ff007262b99e",
+    "packages/editor/autosave.ts": "73c4f502ff96ce7b3af9f2a4cec5369397398b91aee09721db3cf1ccbffa1fd5",
+    "packages/i18n/core.ts": "a8525e1e9c7f176a5f78b8ab316b7c7ab16384cc7d3e2b7829ccf37a90197d50",
+    "packages/i18n/index.tsx": "ef2189817173fb4ceb8041f1957dfaf0ea9876a9bd72b883f46ff68c1f7263be",
+    "packages/i18n/languages.json": "12e11f86877bd3914f43d56d3ce3c0e9116657d68c0aee40027e36480cc2fba6",
+    "packages/i18n/locales/ar.json": "21d7904e59e1ff4573b6b900eae7bc3e4729c26c9b2059cd8232aaab7188c963",
+    "packages/i18n/locales/bn.json": "7329dee6c22443b9e758c10d8621de8237371709a0202807b2e0eeb1fa224c8c",
+    "packages/i18n/locales/de.json": "d169a3d07594a87472e9fbe15ed1a05966b03b2108229eabb856e5d3fcf58490",
+    "packages/i18n/locales/en.json": "648f1bb1bdab45f6ca61862b93b36fe4a11579c0d2c2b88bb49506a1ae458537",
+    "packages/i18n/locales/es.json": "5f8d177070820ac032ca7296612120e8dc8c0adb7bd552728f5b2fb6a284cc31",
+    "packages/i18n/locales/fa.json": "1faa1f9665815d65cff3a373a36f7fe7327075f18df730cd26522cc5f2811ad7",
+    "packages/i18n/locales/fr.json": "f2564399a1e3d25224c0169b8072ad6ab664c8b45abccf20dfcd8a90c3877368",
+    "packages/i18n/locales/hi.json": "6e28b8595934eb4fa1d0d4305dfc32a5de4b5487746739f9c09a5e960ba5e10b",
+    "packages/i18n/locales/id.json": "93a3fcae337d2db6df15b61cae054713bafef2ddf67eb599b4977949149adbe7",
+    "packages/i18n/locales/ja.json": "50b368887f0a3c8443653de4d6fe43e48748b9d8c6d63338b1a4555f790d0c66",
+    "packages/i18n/locales/pcm.json": "71965308793b91fa4a4ebca239a8fab522182bb5e1307d2d7a6ab2a780c426c6",
+    "packages/i18n/locales/pt.json": "8370b10f9b76b9bc6d568572a94121f0445186e27acc3775b4c0c0f2e23a72d5",
+    "packages/i18n/locales/ru.json": "bdcaf4c7863fd6eb213012e9ae6dc8b73cccffb41fedefb702bed4504f2b9311",
+    "packages/i18n/locales/ur.json": "a89e07e8df7a1f96f8eddb1c2711142218c59f0adef27788083e1cb1b1a5047b",
+    "packages/i18n/locales/zh.json": "18cd8e51ac01386f4a3d1e1932d7abfc849885314aae4b439177c289f801a896",
+    "scripts/dev.mjs": "1121cbd8da1e9f044509e72a531257744f2e5abda1cbe02629fda9d8c149e399",
+    "scripts/seed.py": "a1a0cc0eaeddf6e0997578da44ed3f6b81eb2c393bc21a73d3116e59bad5d167",
+    "scripts/update_docs_manifest.py": "868ae7d5b0ed4b4f89c70ba6bf24dd15ffc5a6314468e0557b3b46a04fc3c92d",
+    "scripts/update_implementation.py": "f602e64feca7045312acbf86bea25d66c98c3c0b56c955ef189abd0fe0101e93",
+    "scripts/validate_docs.py": "7b1bcd133fa964fc9c0fa83a516b0f7781a42feb064234376eade289c27ad98d",
+    "scripts/verify.py": "ebb02743c697504cef7ee38f183d90d1f856540d4401c20d3c0376deac4d628c",
+    "tests/autosave.test.mjs": "5852fdcaec28d396e75920e23a57934360be2b58a1afa994268e59e4e5c9331f",
+    "tests/e2e.mjs": "10aa6c8d0e76fa40dbfd44091531d6d8575aa6dd6adbbc4c4f87d5651c4701e9",
+    "tests/i18n.e2e.mjs": "06c8de63f6345ded632c32d75b111366a6fd1aa448d9204e46936dec371232d9",
+    "tests/i18n.test.mjs": "9f057c61a36f2298a9c900246362a863741753dfbd825f033172600770037689",
+    "tests/test_application.py": "51e73c6c970ac8e0e5a39e731366f91c8ba9718d349570053b8f2b7d75325dc6",
+    "tests/test_localization.py": "e1f50c7eb4d860c676fc7fffa09339f7e99043e9d73d4344c5d22c51a87990ca",
+    "tsconfig.json": "72330afe935660debe1229fde81ec55823cb208a5224782cc17ca3dd1334faa1"
+  },
+  "packageLockSha256": "3b8ea02e2cc8a6ae57f3d3fa91447a7bed283a889466e64f0a117835825b6c0c",
+  "migrationSha256": {
+    "apps/api/publisher/migrations/001_authoring.sql": "e14c8925accae86a1efda518b11935bf39a38bbbc324367005349232ba74eee7",
+    "apps/api/publisher/migrations/002_interface_locales.sql": "6d37b29d021106e7e071b3ddbe4b4ce15f091e159f8ac611ce6511d3d9b1a7a3"
+  },
+  "localeCatalogSha256": {
+    "packages/i18n/languages.json": "12e11f86877bd3914f43d56d3ce3c0e9116657d68c0aee40027e36480cc2fba6",
+    "packages/i18n/locales/ar.json": "21d7904e59e1ff4573b6b900eae7bc3e4729c26c9b2059cd8232aaab7188c963",
+    "packages/i18n/locales/bn.json": "7329dee6c22443b9e758c10d8621de8237371709a0202807b2e0eeb1fa224c8c",
+    "packages/i18n/locales/de.json": "d169a3d07594a87472e9fbe15ed1a05966b03b2108229eabb856e5d3fcf58490",
+    "packages/i18n/locales/en.json": "648f1bb1bdab45f6ca61862b93b36fe4a11579c0d2c2b88bb49506a1ae458537",
+    "packages/i18n/locales/es.json": "5f8d177070820ac032ca7296612120e8dc8c0adb7bd552728f5b2fb6a284cc31",
+    "packages/i18n/locales/fa.json": "1faa1f9665815d65cff3a373a36f7fe7327075f18df730cd26522cc5f2811ad7",
+    "packages/i18n/locales/fr.json": "f2564399a1e3d25224c0169b8072ad6ab664c8b45abccf20dfcd8a90c3877368",
+    "packages/i18n/locales/hi.json": "6e28b8595934eb4fa1d0d4305dfc32a5de4b5487746739f9c09a5e960ba5e10b",
+    "packages/i18n/locales/id.json": "93a3fcae337d2db6df15b61cae054713bafef2ddf67eb599b4977949149adbe7",
+    "packages/i18n/locales/ja.json": "50b368887f0a3c8443653de4d6fe43e48748b9d8c6d63338b1a4555f790d0c66",
+    "packages/i18n/locales/pcm.json": "71965308793b91fa4a4ebca239a8fab522182bb5e1307d2d7a6ab2a780c426c6",
+    "packages/i18n/locales/pt.json": "8370b10f9b76b9bc6d568572a94121f0445186e27acc3775b4c0c0f2e23a72d5",
+    "packages/i18n/locales/ru.json": "bdcaf4c7863fd6eb213012e9ae6dc8b73cccffb41fedefb702bed4504f2b9311",
+    "packages/i18n/locales/ur.json": "a89e07e8df7a1f96f8eddb1c2711142218c59f0adef27788083e1cb1b1a5047b",
+    "packages/i18n/locales/zh.json": "18cd8e51ac01386f4a3d1e1932d7abfc849885314aae4b439177c289f801a896"
+  },
+  "buildArtifacts": {
+    "apps/web/dist/index.html": "88df1a1efe1c5aa043296655fdfe21fa93ce1b89ebbc19ecf63a0074e3becdad",
+    "apps/web/dist/assets/translations-4gc76xgV.js": "9778e1ff23bf2b9fb103807aafd3986842955cf1e075917aa972c982b0b34fa7",
+    "apps/web/dist/assets/Studio-DRhEvsu5.js": "5e06870c1b84524c698e2037285fe565901228e2fe8a4621aed4e59f09b9a441",
+    "apps/web/dist/assets/index-DztTkW0j.js": "79560a44fbd764c02ac0cbd97e494fe7b77e3f793c7d3b325b4f045cc1903a8c",
+    "apps/web/dist/assets/index-CluJavFN.css": "8829d1c92540f2fa2d3efa0a395a8abad8bfd5001a2696928d2070053d99737d"
+  },
+  "scope": "Local application and existing documentation samples only. Browser evidence is separate. No production/NFR/conformance/provider assurance inferred."
+}

@@ -1,0 +1,15 @@
+{
+  "checkDate": "2026-10-29",
+  "status": "pass",
+  "requiredMarkdownPresent": 71,
+  "requiredMarkdownTotal": 71,
+  "markdownFiles": 76,
+  "localMarkdownLinksChecked": 422,
+  "contractReferencesChecked": 1037,
+  "openapiOperations": 27,
+  "plantUmlBlocksChecked": 25,
+  "diagramRenderValidated": false,
+  "fullOpenApiAsyncApiSchemaValidation": false,
+  "checks": "File presence, relative link targets, document ID uniqueness, unowned TBD markers, JSON syntax/local references, selected API invariants, bounded event fixture checks and PlantUML delimiters. No full standards validation or browser/production testing.",
+  "errors": []
+}

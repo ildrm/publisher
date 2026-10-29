@@ -1,0 +1,68 @@
+%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012.
+%% ERD-001; scope: conceptual records and cardinalities; FR-DOC-002, FR-PUB-002, FR-COM-001, FR-FIN-001. SOURCE NOT RENDER-VALIDATED.
+%% Legend: PK/FK = key; || = exactly one; o{ = zero or more. Tenant scoping, indexes and deletion rules are described in architecture text.
+erDiagram
+ USER ||--o{ MEMBERSHIP : holds
+ ORGANIZATION ||--o{ MEMBERSHIP : contains
+ ORGANIZATION ||--o{ WORKSPACE : owns
+ WORKSPACE ||--o{ PROJECT : contains
+ PROJECT ||--o{ MANUSCRIPT_VERSION : has
+ MANUSCRIPT_VERSION ||--o{ CHAPTER : snapshots
+ MANUSCRIPT_VERSION ||--o{ SUBMISSION : references
+ SUBMISSION ||--o{ EDITORIAL_TASK : generates
+ PROJECT ||--o{ ASSET : owns
+ ASSET ||--o{ ASSET_LICENSE : licensed_by
+ PROJECT ||--o{ RIGHTS_GRANT : governed_by
+ CONTRACT ||--o{ RIGHTS_GRANT : evidences
+ PROJECT ||--o{ EDITION : produces
+ MANUSCRIPT_VERSION ||--o{ EDITION : source_for
+ EDITION ||--o{ RENDITION : has
+ EDITION ||--o{ LISTING : offered_as
+ LISTING ||--o{ PRODUCT : sells
+ USER ||--o{ ORDER : places
+ ORDER ||--o{ PAYMENT : records
+ ORDER ||--o{ ENTITLEMENT : grants
+ PRODUCT ||--o{ ENTITLEMENT : licenses
+ ORDER ||--o{ REFUND : may_have
+ PAYMENT ||--o{ SALE_EVENT : produces
+ SALE_EVENT ||--o{ LEDGER_ENTRY : posts
+ RIGHTS_GRANT ||--o{ ROYALTY_RULE : defines
+ ROYALTY_RULE ||--o{ LEDGER_ENTRY : calculates
+ USER ||--o{ ROYALTY_STATEMENT : receives
+ ROYALTY_STATEMENT ||--o{ PAYOUT : settles
+ CONVERSION_JOB ||--o{ RENDITION : generates
+ USER {
+  uuid id PK
+ }
+ PROJECT {
+  uuid id PK
+  uuid workspace_id FK
+ }
+ MANUSCRIPT_VERSION {
+  uuid id PK
+  uuid project_id FK
+  int version
+ }
+ RIGHTS_GRANT {
+  uuid id PK
+  uuid contract_id FK
+  string scope
+ }
+ EDITION {
+  uuid id PK
+  uuid manuscript_version_id FK
+ }
+ RENDITION {
+  uuid id PK
+  uuid edition_id FK
+  string checksum
+ }
+ ORDER {
+  uuid id PK
+  uuid user_id FK
+ }
+ LEDGER_ENTRY {
+  uuid id PK
+  string source_event_key
+  string currency
+ }

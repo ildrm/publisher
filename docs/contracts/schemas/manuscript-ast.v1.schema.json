@@ -1,0 +1,144 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/manuscript-ast.v1.schema.json",
+  "title": "Canonical chapter AST v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "direction": {
+      "enum": [
+        "auto",
+        "ltr",
+        "rtl"
+      ]
+    },
+    "language": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 64
+    },
+    "nodes": {
+      "type": "array",
+      "maxItems": 10000,
+      "items": {
+        "$ref": "#/$defs/node"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "direction",
+    "language",
+    "nodes"
+  ],
+  "$defs": {
+    "node": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "type": {
+          "enum": [
+            "paragraph",
+            "heading",
+            "sceneBreak",
+            "blockquote",
+            "list",
+            "listItem",
+            "image",
+            "table",
+            "tableRow",
+            "tableCell",
+            "footnote",
+            "citation",
+            "frontMatter",
+            "backMatter"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "maxLength": 1000000
+        },
+        "direction": {
+          "enum": [
+            "auto",
+            "ltr",
+            "rtl"
+          ]
+        },
+        "language": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        },
+        "assetId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "alt": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "children": {
+          "type": "array",
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/node"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "image"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "assetId",
+              "alt"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "heading"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "required": [
+              "level"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "$comment": "Semantic node combinations, stable ID uniqueness, total depth/text budgets and license checks require application validation beyond this structural schema."
+}

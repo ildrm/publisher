@@ -1,0 +1,75 @@
+{
+  "asyncapi": "3.0.0",
+  "info": {
+    "title": "Publishing internal events",
+    "version": "0.2.0",
+    "description": "Draft reference event contract; at-least-once with outbox/inbox and per-aggregate ordering."
+  },
+  "channels": {
+    "revisionSaved": {
+      "address": "authoring.revision-saved.v1",
+      "messages": {
+        "RevisionSaved": {
+          "$ref": "#/components/messages/RevisionSaved"
+        }
+      }
+    }
+  },
+  "operations": {
+    "publishRevisionSaved": {
+      "action": "send",
+      "channel": {
+        "$ref": "#/channels/revisionSaved"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/revisionSaved/messages/RevisionSaved"
+        }
+      ]
+    },
+    "consumeRevisionSaved": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/revisionSaved"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/revisionSaved/messages/RevisionSaved"
+        }
+      ]
+    }
+  },
+  "components": {
+    "messages": {
+      "RevisionSaved": {
+        "name": "RevisionSaved",
+        "title": "Committed canonical revision reference",
+        "contentType": "application/json",
+        "payload": {
+          "$ref": "./schemas/revision-saved.v1.schema.json"
+        },
+        "correlationId": {
+          "location": "$message.payload#/correlationId"
+        }
+      }
+    }
+  },
+  "x-delivery": {
+    "semantics": "at-least-once",
+    "deduplication": "consumer,eventId",
+    "ordering": "aggregateId,sequence",
+    "retry": "bounded exponential backoff; DLQ after configured budget; reconciliation of gaps",
+    "schemaEvolution": "RevisionSaved v1 has closed objects; adding or changing fields requires an explicitly versioned schema and consumer compatibility rollout. Producers must never include private manuscript text or credentials."
+  },
+  "x-remaining-events": [
+    "MembershipChanged",
+    "RenditionValidated",
+    "ReviewDecided",
+    "RightsChanged",
+    "EditionReleased",
+    "PaymentConfirmed",
+    "RoyaltyPosted",
+    "PayoutReconciled",
+    "ListingHeld"
+  ]
+}

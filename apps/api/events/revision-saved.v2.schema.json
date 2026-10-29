@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RevisionSaved v2 local outbox payload",
+  "description": "Private reference-only payload. This is persisted transactionally; no external dispatcher or v1 event emission is implemented.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "chapterId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "revisionId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "chapterId",
+    "revisionId",
+    "sequence"
+  ]
+}

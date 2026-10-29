@@ -1,0 +1,11 @@
+✔ lost response retries identical body/key before sending a newer draft (1.001ms)
+✔ in-flight edit is not marked saved by an older acknowledgement (0.416375ms)
+✔ stale version stops automatic retry and preserves draft for manual recovery (0.133333ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 74.273583

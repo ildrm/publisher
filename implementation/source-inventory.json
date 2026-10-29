@@ -1,0 +1,644 @@
+[
+  {
+    "path": "docs/00-governance/01-scope-and-assumptions.md",
+    "sha256": "ebfbcf678526cd989b146dbe70dcf9d7dbbaec86ede60b8be0ccc87553615b4d",
+    "bytes": 10642,
+    "title": "# GOV-001 — Scope and assumptions"
+  },
+  {
+    "path": "docs/00-governance/02-decisions-and-open-questions.md",
+    "sha256": "7efb8bd28247756c538d6ce49a1b924c636073a5b3d8848546186a3d969be3ac",
+    "bytes": 12657,
+    "title": "# GOV-002 — Decision, question and risk registers"
+  },
+  {
+    "path": "docs/00-governance/03-glossary-and-ubiquitous-language.md",
+    "sha256": "054ea13384cde0df42d07e3236f2c787de058548b709c213e814a81a5d0649d1",
+    "bytes": 6012,
+    "title": "# GOV-003 — Glossary and ubiquitous language"
+  },
+  {
+    "path": "docs/00-governance/04-stakeholders-roles-raci.md",
+    "sha256": "8fab0e070a856078034a3751d6c76613cafdffce3e268bd155a5dfd2d6811ef5",
+    "bytes": 7559,
+    "title": "# GOV-004 — Stakeholders, accountable roles and RACI"
+  },
+  {
+    "path": "docs/00-governance/05-document-control-and-traceability.md",
+    "sha256": "e78dca64b0b6a694276133a4af22cb3b422899fd9d13c54d12ff8f0b6c0c4e77",
+    "bytes": 6743,
+    "title": "# GOV-005 — Document control and traceability"
+  },
+  {
+    "path": "docs/01-discovery-strategy/01-vision-value-proposition-and-positioning.md",
+    "sha256": "c83476844ca5489abe6a3cd5ff685682bfee9996ba9d57ba5e152971881f25cb",
+    "bytes": 5402,
+    "title": "# DISC-01 — Vision, value proposition and positioning"
+  },
+  {
+    "path": "docs/01-discovery-strategy/02-market-and-competitor-evidence-matrix.md",
+    "sha256": "a2071324131184cf033040c532192fd5a4adcdd206b1c1106a640dfce7e8d660",
+    "bytes": 13784,
+    "title": "# DISC-02 — Market and competitor evidence register"
+  },
+  {
+    "path": "docs/01-discovery-strategy/03-personas-jtbd-and-research-plan.md",
+    "sha256": "f43eaf43894c7bed84d2c3a4fbe8e924d3c176c04a8585481b9a35d1137c1389",
+    "bytes": 5404,
+    "title": "# DISC-03 — Personas, jobs and research plan"
+  },
+  {
+    "path": "docs/01-discovery-strategy/04-business-model-and-unit-economics.md",
+    "sha256": "76a49ce5c76f4ee3b666a7da88cf9d466fd0f93b017d90f119d9f43528ff9112",
+    "bytes": 4723,
+    "title": "# DISC-04 — Business model and unit economics"
+  },
+  {
+    "path": "docs/01-discovery-strategy/05-service-blueprints-and-user-journeys.md",
+    "sha256": "109240717a732270f502fa9adb4e158f03bfd334ea72c6f4b42e1f879845ac81",
+    "bytes": 5372,
+    "title": "# DISC-05 — Service blueprints and user journeys"
+  },
+  {
+    "path": "docs/01-discovery-strategy/06-product-kpis-and-analytics-plan.md",
+    "sha256": "a02abaa25c3f292625bccdf471a0b1857c716fd610538fe7f9618dbb707e979e",
+    "bytes": 7033,
+    "title": "# DISC-06 — Product KPIs and analytics plan"
+  },
+  {
+    "path": "docs/01-discovery-strategy/07-standards-and-source-register.md",
+    "sha256": "d8a707f86ea45ebd5219d95ae86e33441690ace93249343c5ae4cb236d81666a",
+    "bytes": 4045,
+    "title": "# DISC-07 — Standards and source register"
+  },
+  {
+    "path": "docs/02-requirements/01-complete-prd.md",
+    "sha256": "50b87730dec1d3824806836a344f09c97e8fe445eb0040afa480d822bb8ccfde",
+    "bytes": 7771,
+    "title": "# PRD-001 — Product requirements: author studio and publishing house"
+  },
+  {
+    "path": "docs/02-requirements/02-system-requirements-specification-srs.md",
+    "sha256": "10168a46d3b57410f294576557db8b1432b057c07904f25a23e60b627021d593",
+    "bytes": 11180,
+    "title": "# SRS-001 — System requirements specification"
+  },
+  {
+    "path": "docs/02-requirements/03-feature-catalog-and-prioritization.md",
+    "sha256": "4466123c0fa9c89e865e245284d6a6f06c3703ac5e9a3bcd01a36494447b3a37",
+    "bytes": 42650,
+    "title": "# REQ-03 — Feature catalog and prioritization"
+  },
+  {
+    "path": "docs/02-requirements/04-epics-user-stories-and-gherkin.md",
+    "sha256": "d3a4530f2298ee796ef56e3e2179842a6d13a3c8d90042cedc5212b9623a846a",
+    "bytes": 14942,
+    "title": "# REQ-04 — Epics, user stories and acceptance scenarios"
+  },
+  {
+    "path": "docs/02-requirements/05-business-rules-and-permissions.md",
+    "sha256": "b8cb60089a9eea787512c08eae53e8e832e9f557667afbd247217d31fbf99cd0",
+    "bytes": 10109,
+    "title": "# REQ-05 — Business rules and permissions"
+  },
+  {
+    "path": "docs/02-requirements/06-nonfunctional-requirements-and-slos.md",
+    "sha256": "ed44666a8028e02934766c6bdb39a10cc71a674cfca18626a86d745b79275c1f",
+    "bytes": 12006,
+    "title": "# REQ-06 — Nonfunctional requirements and service objectives"
+  },
+  {
+    "path": "docs/02-requirements/07-error-recovery-and-edge-cases.md",
+    "sha256": "d0edac93d64dfc5a15a2c336a9878575dc6b0780b753b4d60f1925959031cc3f",
+    "bytes": 8701,
+    "title": "# REC-001 — Error recovery and edge cases"
+  },
+  {
+    "path": "docs/03-experience-design/01-information-architecture-and-sitemaps.md",
+    "sha256": "3f50bf5ba80c18875bc23dc5745655776a4916ace4322e3347317d6c766d5c8c",
+    "bytes": 3727,
+    "title": "# UX-001 — Information architecture and sitemaps"
+  },
+  {
+    "path": "docs/03-experience-design/02-navigation-and-journey-flows.md",
+    "sha256": "478c82f42c908bc86b78dc8bac1d5491725d0384c45a5719a96ea067840ed8b5",
+    "bytes": 4183,
+    "title": "# UX-002 — Navigation and journey flows"
+  },
+  {
+    "path": "docs/03-experience-design/03-screen-inventory-and-screen-specs.md",
+    "sha256": "e2d419014cdadab9c709052a7642887cbb3627c469719486d453f71ab67094a2",
+    "bytes": 19016,
+    "title": "# UX-003 — Screen inventory and contracts"
+  },
+  {
+    "path": "docs/03-experience-design/04-design-system-and-design-tokens.md",
+    "sha256": "561378f81bff69a751ed3845d91f1ae593c5fa520fece892b300a6baeca73023",
+    "bytes": 3369,
+    "title": "# UX-004 — Design system and design tokens"
+  },
+  {
+    "path": "docs/03-experience-design/05-interaction-and-content-guidelines.md",
+    "sha256": "4a75f48f595acef0b32e2d617b49463de5d3b8c5e05e3c0c1249db47cea25f7e",
+    "bytes": 2896,
+    "title": "# UX-005 — Interaction and content guidelines"
+  },
+  {
+    "path": "docs/03-experience-design/06-accessibility-and-i18n-specification.md",
+    "sha256": "5c11a66032179899560a91bcf6f08a840e1d4a1bde0fd8cbb04ce58f483289c2",
+    "bytes": 7765,
+    "title": "# UX-006 — Accessibility and internationalization specification"
+  },
+  {
+    "path": "docs/03-experience-design/07-wireframes-and-prototype-checklist.md",
+    "sha256": "5ff19edb42aa8cf7374a2cfcf88b7f3e9fc2cf822e64c06c6cae0f11a7e702c6",
+    "bytes": 3960,
+    "title": "# UX-007 — Wireframes and prototype checklist"
+  },
+  {
+    "path": "docs/04-publishing-domain/01-editorial-publishing-workflow.md",
+    "sha256": "d16455cbc857f24fe408a44df9f9fb9bab96fc7de5e12ab8c2985030715448b8",
+    "bytes": 6414,
+    "title": "# PUB-001 — Editorial publishing workflow"
+  },
+  {
+    "path": "docs/04-publishing-domain/02-structured-manuscript-and-asset-model.md",
+    "sha256": "0c649bc13ce81680ad969e770a0f69b0c2451d1647c3d9cea5684a61a6e99433",
+    "bytes": 5132,
+    "title": "# PUB-002 — Structured manuscript and asset model"
+  },
+  {
+    "path": "docs/04-publishing-domain/03-formats-typography-and-conversion.md",
+    "sha256": "f1b288b071e2efb197fba040f7ddd9a05f839e68eaee50b61b4432c07855c9ac",
+    "bytes": 6014,
+    "title": "# PUB-003 — Formats, typography and conversion"
+  },
+  {
+    "path": "docs/04-publishing-domain/04-print-preflight-and-proofing.md",
+    "sha256": "512d7db868ef9975c2427434dd1b1ff6c9070875ffcf89143a55de28fff07774",
+    "bytes": 3124,
+    "title": "# PUB-004 — Print preflight and proofing"
+  },
+  {
+    "path": "docs/04-publishing-domain/05-rights-contracts-and-metadata.md",
+    "sha256": "3eb84633d1072acc5accde6f6a09c8003eceecf0ecfe173cddffc29306542242",
+    "bytes": 5619,
+    "title": "# PUB-005 — Rights, contracts and metadata"
+  },
+  {
+    "path": "docs/04-publishing-domain/06-distribution-commerce-and-royalties.md",
+    "sha256": "6b79c22ab4067fe26a4fa8a1ba9c2afdd51001044d6e667798e5bc8243fbad80",
+    "bytes": 7238,
+    "title": "# PUB-006 — Distribution, commerce and royalties"
+  },
+  {
+    "path": "docs/04-publishing-domain/07-three-d-visualization-and-asset-pipeline.md",
+    "sha256": "688a721a82c6198f15e82a618e2a3f6b5d982cb8512a2fa72cd0dbf6c5dedca7",
+    "bytes": 3884,
+    "title": "# PUB-007 — 3D visualization and asset pipeline"
+  },
+  {
+    "path": "docs/05-software-architecture/01-architecture-vision-and-quality-attributes.md",
+    "sha256": "fc5f1dca7bb480eebe3099e1bccd167be01897dcbf2bc313b29ae3789e4cd245",
+    "bytes": 5135,
+    "title": "# ARC-01 — Architecture vision and quality attributes"
+  },
+  {
+    "path": "docs/05-software-architecture/02-domain-boundaries-and-context-map.md",
+    "sha256": "5257d5686e786c7ab9c29be9c59d181d9dd87ade08ab64491705a335b6e14acb",
+    "bytes": 5719,
+    "title": "# ARC-02 — Domain boundaries and context map"
+  },
+  {
+    "path": "docs/05-software-architecture/03-c4-context-container-component.md",
+    "sha256": "c162e2d3858b23b59d38655023ed1af2c8ba983f61a57f01eb565dc609013dfc",
+    "bytes": 3246,
+    "title": "# ARC-03 — C4 context, container and component views"
+  },
+  {
+    "path": "docs/05-software-architecture/04-uml-and-erd-index.md",
+    "sha256": "3607041a8bcd7f95e7fa89cd801bb611620523fbbcc2e5f45d664636bc53d234",
+    "bytes": 3701,
+    "title": "# ARC-04 — UML and ERD index"
+  },
+  {
+    "path": "docs/05-software-architecture/05-database-and-migrations.md",
+    "sha256": "0d325f26f02fd4b788d4c618195a676370bfd9fc3cc2b87d8decc2c5ce6ba039",
+    "bytes": 14781,
+    "title": "# ARC-05 — Database, entity dictionary and migrations"
+  },
+  {
+    "path": "docs/05-software-architecture/06-api-contracts-and-event-schemas.md",
+    "sha256": "a3fd9ee8f9c49c684cb202d5d4109717f0ba6ee05f52dd87c626bc00a9e47417",
+    "bytes": 6128,
+    "title": "# ARC-06 — API contracts and event schemas"
+  },
+  {
+    "path": "docs/05-software-architecture/07-document-sync-autosave-and-conflict-handling.md",
+    "sha256": "e71484815e70e39e00751f9c43e5e4562cca7be7fa0b4769b92393bfdccfe0b7",
+    "bytes": 7551,
+    "title": "# ARC-07 — Document sync, autosave and conflict handling"
+  },
+  {
+    "path": "docs/05-software-architecture/08-export-and-async-job-architecture.md",
+    "sha256": "1943b7c1a05c20d3a91484d1fc0a8fa94f85d9625092335b50d466145bed92ac",
+    "bytes": 4526,
+    "title": "# ARC-08 — Export and asynchronous job architecture"
+  },
+  {
+    "path": "docs/05-software-architecture/09-data-privacy-security-and-threat-model.md",
+    "sha256": "a1f3f8d3be715eb9937640ac48085024d937ed583bb34fa72aba630a8f2436cb",
+    "bytes": 6816,
+    "title": "# ARC-09 — Privacy, security and threat model"
+  },
+  {
+    "path": "docs/05-software-architecture/10-integration-architecture.md",
+    "sha256": "ca5fa465abdd3ce6d2449516540960e148b46f40bf4ca2b73df4bf7693f646c9",
+    "bytes": 3946,
+    "title": "# ARC-10 — Integration architecture"
+  },
+  {
+    "path": "docs/05-software-architecture/11-architecture-decision-records.md",
+    "sha256": "9509848442415e4f4315b134d36c99bc70b697983841b855f748d6fcd7133936",
+    "bytes": 4471,
+    "title": "# ARC-11 — Architecture decision records"
+  },
+  {
+    "path": "docs/06-engineering-handbook/01-reference-stack-and-tradeoffs.md",
+    "sha256": "29fa2a9df13e3c88889a01c08ef8d81cc0fa88a2abf53232581c13b067fd16e0",
+    "bytes": 3168,
+    "title": "# ENG-01 — Candidate stack and tradeoffs"
+  },
+  {
+    "path": "docs/06-engineering-handbook/02-repository-module-boundaries.md",
+    "sha256": "04f11a55ac40500f42b27b80978137d4fa805478c31b047569582184c8aff781",
+    "bytes": 3035,
+    "title": "# ENG-02 — Repository and module boundaries"
+  },
+  {
+    "path": "docs/06-engineering-handbook/03-clean-code-and-coding-standards.md",
+    "sha256": "fbd7b3f345c7554f548f2ebf9781a55a541a20b06f354e3e4c40fecedba5711d",
+    "bytes": 3062,
+    "title": "# ENG-03 — Clean code and standards"
+  },
+  {
+    "path": "docs/06-engineering-handbook/04-coding-patterns-and-anti-patterns.md",
+    "sha256": "3da333aee80cab2bc79f425c712b186c20711c99aadae7c87d470327c338e95e",
+    "bytes": 3403,
+    "title": "# ENG-04 — Patterns and anti-patterns"
+  },
+  {
+    "path": "docs/06-engineering-handbook/05-example-code-and-contracts.md",
+    "sha256": "d794e84d634e9680ce714a05d00c15bf891cf1fbb1148fdb556dc279b8f515da",
+    "bytes": 5056,
+    "title": "# ENG-05 — Reference example index"
+  },
+  {
+    "path": "docs/06-engineering-handbook/06-git-pr-review-and-definition-of-done.md",
+    "sha256": "892ef0df19b8e679c30546c77565bf697f8fd746beac8c3ea95f0771415f0979",
+    "bytes": 3064,
+    "title": "# ENG-06 — Git, review and delivery definition"
+  },
+  {
+    "path": "docs/06-engineering-handbook/07-database-schema-and-versioning-standards.md",
+    "sha256": "395d46271ba95c7bbca4d3e433bb708bc9c5efae6f1223720a4904ab2bf6541b",
+    "bytes": 3068,
+    "title": "# ENG-07 — Data schema and migration standards"
+  },
+  {
+    "path": "docs/06-engineering-handbook/08-ai-coding-agent-instructions.md",
+    "sha256": "3206c43a6b18930740c39e11651042a74dc75107de9ce2b0afb337b82afd23dc",
+    "bytes": 2965,
+    "title": "# ENG-08 — AI coding agent working contract"
+  },
+  {
+    "path": "docs/07-assurance/01-test-strategy-and-quality-gates.md",
+    "sha256": "ac79576c4d9c23d2b63b3affb0fd70910b4aaeaf432252d9d7e079e013b10f7b",
+    "bytes": 4336,
+    "title": "# QA-01 — Test strategy and quality gates"
+  },
+  {
+    "path": "docs/07-assurance/02-functional-integration-e2e-test-catalog.md",
+    "sha256": "4829b3838a6e9dabb6d7573fbf491e661674c2b3b8449012ce47e9384394b893",
+    "bytes": 8955,
+    "title": "# QA-02 — P0 functional, integration and E2E cases"
+  },
+  {
+    "path": "docs/07-assurance/03-book-format-and-print-fidelity-test-plan.md",
+    "sha256": "351beda4259d2dcd2b29c47b185356fe74cc1f987b49dca4ba2c89d7da845a64",
+    "bytes": 3510,
+    "title": "# QA-03 — Book format and proof fidelity"
+  },
+  {
+    "path": "docs/07-assurance/04-security-privacy-and-abuse-test-plan.md",
+    "sha256": "9068cedf8b0eacf5008eb60504f582a98a44763397ebcdc12a97a877b04acfb0",
+    "bytes": 5042,
+    "title": "# QA-04 — Security, privacy and abuse tests"
+  },
+  {
+    "path": "docs/07-assurance/05-accessibility-localization-and-browser-matrix.md",
+    "sha256": "7c4b25ddc58476e41c84ad0ceb052f8e2ff73addaa6cb1413e0b2f14fd3810a8",
+    "bytes": 5747,
+    "title": "# QA-05 — Accessibility, localization and browser matrix"
+  },
+  {
+    "path": "docs/07-assurance/06-performance-load-resilience-and-dr-plan.md",
+    "sha256": "fb365e5456660b936421e02c6ef2010306608bf8dc20638c8283f0c8e18c4d06",
+    "bytes": 8253,
+    "title": "# QA-06 — Performance, load, resilience and disaster recovery"
+  },
+  {
+    "path": "docs/07-assurance/07-requirements-to-test-traceability.md",
+    "sha256": "260c85dfcaa6d68e0a93685b0f7052a67f83a0634ea559a2a17dc097aa00dccf",
+    "bytes": 7656,
+    "title": "# QA-07 — Requirements-to-test traceability"
+  },
+  {
+    "path": "docs/08-operations/01-cloud-deployment-and-environments.md",
+    "sha256": "e2e28ab70b98d488a27030e0b817044a9a2b9387429e45aa619ece7b2c776ec2",
+    "bytes": 2997,
+    "title": "# OPS-01 — Environments and deployment"
+  },
+  {
+    "path": "docs/08-operations/02-cicd-and-supply-chain-security.md",
+    "sha256": "f67661584c75ff188c49be71f834ee270093bfe993afb625905fd453de8d3897",
+    "bytes": 2778,
+    "title": "# OPS-02 — CI/CD and supply-chain security"
+  },
+  {
+    "path": "docs/08-operations/03-observability-slos-and-incident-response.md",
+    "sha256": "72bd6f1687ad8b7c251b933930d5517a498909f8cdc9dac9dba69c6585001a79",
+    "bytes": 3453,
+    "title": "# OPS-03 — Observability, SLO and incidents"
+  },
+  {
+    "path": "docs/08-operations/04-backup-restore-and-business-continuity.md",
+    "sha256": "8eeff11a7fb0a3bbfbce81101cbd6507fbd38eb2030818a151f8fb5813984755",
+    "bytes": 3139,
+    "title": "# OPS-04 — Backup, restore and continuity"
+  },
+  {
+    "path": "docs/08-operations/05-data-retention-and-customer-support-runbooks.md",
+    "sha256": "b021f91d333af732efd95ae2186c2535929e8d6c79a0294aa78fd7bb7ee1afda",
+    "bytes": 3138,
+    "title": "# OPS-05 — Retention and support runbooks"
+  },
+  {
+    "path": "docs/08-operations/06-capacity-cost-and-finops.md",
+    "sha256": "2ce300e6decaf9c32350827abf215774ff258d2f29ff2143950348809b195b57",
+    "bytes": 4432,
+    "title": "# OPS-06 — Capacity and cost model"
+  },
+  {
+    "path": "docs/09-delivery-and-procurement/01-rfp-and-vendor-response-template.md",
+    "sha256": "fa89128a997416202622e22e77fc73af3b7f1e1768f635e85bd426d34aecdba7",
+    "bytes": 4372,
+    "title": "# DEL-01 — RFP and vendor scorecard"
+  },
+  {
+    "path": "docs/09-delivery-and-procurement/02-scope-phases-roadmap-and-dependencies.md",
+    "sha256": "d4ee336531bf2e1b5f024224a3ca0308b9703a0b208bb70986385e05f158d296",
+    "bytes": 3526,
+    "title": "# DEL-02 — Phases and dependency roadmap"
+  },
+  {
+    "path": "docs/09-delivery-and-procurement/03-team-plan-estimates-and-critical-path.md",
+    "sha256": "f2663ce5c8e0389a8cce56d5973946845bafbfa6770418cb689deff3d2288b0e",
+    "bytes": 4180,
+    "title": "# DEL-03 — Team, estimates and critical path"
+  },
+  {
+    "path": "docs/09-delivery-and-procurement/04-risk-register-and-mitigation.md",
+    "sha256": "dcb7071f67915292af23ec99c185407ec5a3bdbf60d67b42e2da0ed8f451df23",
+    "bytes": 3507,
+    "title": "# DEL-04 — Delivery risk management"
+  },
+  {
+    "path": "docs/09-delivery-and-procurement/05-acceptance-milestones-and-exit-criteria.md",
+    "sha256": "5b7e492ae170b1bf8962a047162c69872a17f15fc0900c9a33428114d36ed729",
+    "bytes": 3427,
+    "title": "# DEL-05 — Acceptance and exit criteria"
+  },
+  {
+    "path": "docs/09-delivery-and-procurement/06-pilot-launch-growth-and-operations-readiness.md",
+    "sha256": "38fa428a6f83d4aa5d73089f2726fc51eaacf60d6ee4e518ec49e013575121f4",
+    "bytes": 3710,
+    "title": "# DEL-06 — Pilot, launch and readiness"
+  },
+  {
+    "path": "docs/CHANGELOG.md",
+    "sha256": "d04a7481c2142fa633a322e1eabe6887bc3e17fd7e0174645bf09b797304ac75",
+    "bytes": 2946,
+    "title": "# CHG-001 — Documentation change log"
+  },
+  {
+    "path": "docs/QUALITY_AUDIT.md",
+    "sha256": "e788869244ed4e50a026a3a2d4146618b16c840d40bf14fefcdd6eca675fea24",
+    "bytes": 11594,
+    "title": "# AUD-001 — Documentation quality audit and remaining decisions"
+  },
+  {
+    "path": "docs/README.md",
+    "sha256": "835b3c572ea3ca266fea6f613319ac48380c3223d7dd24b737be7b301a876e60",
+    "bytes": 16764,
+    "title": "# DOC-000 — Publishing documentation manifest and executive brief"
+  },
+  {
+    "path": "docs/contracts/asyncapi.yaml",
+    "sha256": "a16467240dfce6bf49972ba3c5ec2c39b71fb2f4824e89c63c9d994dd56c7627",
+    "bytes": 2065,
+    "title": "{"
+  },
+  {
+    "path": "docs/contracts/openapi.yaml",
+    "sha256": "ed3388d4e3e276fb88eca2d9c28469631fef40432a77e01f9de0ea960ee1c02e",
+    "bytes": 98633,
+    "title": "{"
+  },
+  {
+    "path": "docs/contracts/schemas/manuscript-ast.v1.schema.json",
+    "sha256": "4ee9dfef424742c66e8b6bab2fe599ddee310fb8a1a70bc37069b29648de49aa",
+    "bytes": 2965,
+    "title": "{"
+  },
+  {
+    "path": "docs/contracts/schemas/manuscript-ast.v2.schema.json",
+    "sha256": "9469be7c8b288e2bd75faf5bb465e5216d53c3570e5c79e03c6ba527080f9085",
+    "bytes": 4965,
+    "title": "{"
+  },
+  {
+    "path": "docs/contracts/schemas/revision-saved.v1.json",
+    "sha256": "240b02294550c1dd7e56f533475d285ce432139489686bd7e5aae4340a2e3266",
+    "bytes": 433,
+    "title": "{"
+  },
+  {
+    "path": "docs/contracts/schemas/revision-saved.v1.schema.json",
+    "sha256": "235e1bc3c5f4e8d8aa2d8b4de8c3cb9ca90aed456ebe6442848699b1c4525d1f",
+    "bytes": 1297,
+    "title": "{"
+  },
+  {
+    "path": "docs/diagrams/c4-component.mmd",
+    "sha256": "79d54f2d2752a4c7135fa6b72109811abacadff8c3cb3d096334a5f9ac9ea395",
+    "bytes": 1325,
+    "title": "%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/c4-container.mmd",
+    "sha256": "ab8da8d2d21fccebf6042d03869c4aeb7dc66d121bcbd9f48bea2d535ab4bfd6",
+    "bytes": 1431,
+    "title": "%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/c4-context.mmd",
+    "sha256": "f37d81e2cfd033873fb9b1523bf49cbe3617ca5a8320acbb7178e0b8d9766c49",
+    "bytes": 1140,
+    "title": "%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/data-flow.mmd",
+    "sha256": "264862b6c1422fe399bac0f6631c86de5bc1cd3767f90b51153e1720243621b8",
+    "bytes": 1723,
+    "title": "%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/erd.mmd",
+    "sha256": "bc6315487209edaa5526617a68fc72156e9acba89eb0eec36f508f728d97627a",
+    "bytes": 2136,
+    "title": "%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/events.mmd",
+    "sha256": "f57f522b2dc751278ec303fa400b861b0ecfda0a7cc4eb1013a81a94b9cad210",
+    "bytes": 1129,
+    "title": "%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/pub-editorial-activity.mmd",
+    "sha256": "0529793e4f2e25d8848b41179b8e7fa71a0a9a97bad72ee4dc1ad02ee4c634b7",
+    "bytes": 1062,
+    "title": "%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/uml-activities.puml",
+    "sha256": "7d9c61ceef01c64b3442bef6bed8ec66ebd10d8f31cb6c3e338366c2c373e860",
+    "bytes": 2461,
+    "title": "' Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/uml-deployment.puml",
+    "sha256": "ddb63d30e8b45b44c0e800846f731e86dcd584033f197e01d430230b7830593d",
+    "bytes": 1828,
+    "title": "' Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/uml-domain.puml",
+    "sha256": "5fdd4a8b9d5692875a9a74b6823f09d0e2ce7ab31d5d4828f24776c4414f6829",
+    "bytes": 1530,
+    "title": "' Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/uml-sequences.puml",
+    "sha256": "9514e48d9233b1ecbccbffa87d1fa50fed944254e59b68a9bfcfc62653e67f13",
+    "bytes": 9184,
+    "title": "' Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/uml-states.puml",
+    "sha256": "8a7b1ac69894515803d95b8f413bc3eb79ba92e8b3ed32c98dd1502358481e93",
+    "bytes": 9386,
+    "title": "' Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/uml-use-cases.puml",
+    "sha256": "9a289e25fc64b215149eddef8a7cabb1510f23f2f05641798174c15cfceed78d",
+    "bytes": 1140,
+    "title": "' Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/diagrams/ux-author-journey.mmd",
+    "sha256": "41ad4c81b9350cc432a48864a7ac8a6203cfd92fc536447d71cde2e0613fe99b",
+    "bytes": 1151,
+    "title": "%% Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012."
+  },
+  {
+    "path": "docs/document-manifest.json",
+    "sha256": "a99f3a94971fdb2819f2987e6f43152f38f29afbdcbf38ee6330a747e2e2d038",
+    "bytes": 5041,
+    "title": "{"
+  },
+  {
+    "path": "docs/samples/frontend-autosave.mjs",
+    "sha256": "da402e6eb2d09c17f3aa43f35a4b9cb73b61b501991d707815b58abe8400f245",
+    "bytes": 2912,
+    "title": "/** Browser-neutral editor integration illustration. No editor library, durable storage or UI is implemented."
+  },
+  {
+    "path": "docs/samples/reference/README.md",
+    "sha256": "dc4e18dc117cccb46e913d476293829ad376bc0d37e9585b5f24af4c487b53bf",
+    "bytes": 5771,
+    "title": "# SAMPLE-REF-001 — Executable Python reference illustrations"
+  },
+  {
+    "path": "docs/samples/reference/__init__.py",
+    "sha256": "ee084ec5e7b82a72d626fd343fada95404cc097f22953af0f05e444f2ab1e018",
+    "bytes": 69,
+    "title": "\"\"\"Educational reference examples; not production infrastructure.\"\"\""
+  },
+  {
+    "path": "docs/samples/reference/domain.py",
+    "sha256": "09cbaf403535ec6aef56ce4143ba582d9544b183f8ba065b70e7cb23be3dd586",
+    "bytes": 4119,
+    "title": "\"\"\"Immutable structured manuscript, permissions, and in-memory save contract.\"\"\""
+  },
+  {
+    "path": "docs/samples/reference/export.py",
+    "sha256": "b62125468c383e86423a679fd19a5d3bc8bb6bc6a83ba2e603405fd01c6e8d2a",
+    "bytes": 2366,
+    "title": "\"\"\"In-memory authorization, job deduplication and atomic promotion illustration.\"\"\""
+  },
+  {
+    "path": "docs/samples/reference/finance.py",
+    "sha256": "d1969bf77f72675c3d5f5e73bab03026af6aaafed9126b8b5f4896cb95a445a6",
+    "bytes": 4322,
+    "title": "\"\"\"Illustrative authenticated event intake and balanced integer-unit ledger.\"\"\""
+  },
+  {
+    "path": "docs/samples/reference/upload.py",
+    "sha256": "7f015530bb1b8d6de63d41b3e2782f323f781d7eb1e729ac2900fb8cff4ec730",
+    "bytes": 3416,
+    "title": "\"\"\"Bounded upload inspection example, not a malware scanner or complete DOCX sanitizer.\"\"\""
+  },
+  {
+    "path": "docs/samples/tests/__init__.py",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "title": ""
+  },
+  {
+    "path": "docs/samples/tests/autosave.test.mjs",
+    "sha256": "2770323be65debdaf8d1123e2a45e907e9faeeb280fe037a62744029a64cf7c4",
+    "bytes": 2042,
+    "title": "import test from 'node:test';"
+  },
+  {
+    "path": "docs/samples/tests/test_reference.py",
+    "sha256": "c3fef7c1a9b28bb99d0135d8d07bcfcf656f10c76f2ffa0edbff3a5342c89770",
+    "bytes": 8252,
+    "title": "import hmac"
+  },
+  {
+    "path": "docs/source/master-prompt.md",
+    "sha256": "9eb6774bfb8a5495e6e1c0f5bca8fbc9edb97211ccb8e4f4180a6c3c8ddd5757",
+    "bytes": 57612,
+    "title": "# SUPER-MEGA MASTER PROMPT"
+  },
+  {
+    "path": "docs/validation-report.json",
+    "sha256": "cb0ef5c534cac805e67f0efa5356a72d1ff360c666e16bff6586ab2462bbfe21",
+    "bytes": 636,
+    "title": "{"
+  }
+]

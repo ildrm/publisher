@@ -1,0 +1,32 @@
+' Version 0.2 / 2026-10-29; Draft. Author/accountable: Solution Architect; consulted: Domain, Security, Accessibility, QA; reviewer: Engineering Lead; approver: Product Owner (pending); decision owner: Solution Architect. Assumptions ASM-001–012.
+@startuml
+' UML-UC-001 scope: author, editorial, reader and finance. FR-DOC-002, FR-PUB-002, FR-COM-001, FR-FIN-001. SOURCE NOT RENDER-VALIDATED.
+left to right direction
+actor Author
+actor Editor
+actor Reader
+actor Finance
+actor Admin
+rectangle "Author Studio and Publishing Platform" {
+  usecase "Draft and save" as UC1
+  usecase "Export without publication" as UC2
+  usecase "Submit frozen revision" as UC3
+  usecase "Review and approve release" as UC4
+  usecase "Discover and purchase" as UC5
+  usecase "Read entitled rendition" as UC6
+  usecase "Reconcile royalties and payouts" as UC7
+  usecase "Handle support and takedown" as UC8
+}
+Author --> UC1
+Author --> UC2
+Author --> UC3
+Editor --> UC4
+Reader --> UC5
+Reader --> UC6
+Finance --> UC7
+Admin --> UC8
+legend right
+Association = actor initiates or participates.
+Approval and authorization are required where scoped.
+endlegend
+@enduml

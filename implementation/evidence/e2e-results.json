@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-29",
+  "status": "PASS",
+  "browser": "Installed Google Chrome via Playwright; in-app browser access host unavailable",
+  "viewports": [
+    "1440x960",
+    "390x844"
+  ],
+  "observations": [
+    "Register → private local verification mail → verify → sign in → real dashboard",
+    "Create private project → semantic editor → acknowledged save → reload exact Unicode content",
+    "Preview preserves unsaved text; network failure stays unsaved; retry persists identical content",
+    "Restore creates a new revision, then continued writing succeeds",
+    "Two-tab stale save rejected with explicit recovery; persisted winner remains unchanged",
+    "Unpublished manuscript exports an actual private Markdown artifact",
+    "Import → preview → explicit transformation acknowledgement → new persisted chapter",
+    "Real shared read-only access; direct write denied; revocation blocks fresh API reads",
+    "Automated axe scan has no violations; 390px viewport has no document overflow; keyboard focus is visible"
+  ],
+  "consoleErrors": []
+}

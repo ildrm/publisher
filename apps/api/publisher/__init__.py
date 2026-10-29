@@ -1,0 +1,1 @@
+"""Publisher local authoring application."""

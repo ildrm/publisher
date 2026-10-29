@@ -1,0 +1,21 @@
+test_concurrent_same_version_has_one_winner (tests.test_reference.DomainTests.test_concurrent_same_version_has_one_winner) ... ok
+test_duplicate_chapters_rejected (tests.test_reference.DomainTests.test_duplicate_chapters_rejected) ... ok
+test_lost_response_retry_is_idempotent (tests.test_reference.DomainTests.test_lost_response_retry_is_idempotent) ... ok
+test_reject_invalid_nesting_and_mutable_children (tests.test_reference.DomainTests.test_reject_invalid_nesting_and_mutable_children) ... ok
+test_scope_and_revocation_checked_even_on_retry (tests.test_reference.DomainTests.test_scope_and_revocation_checked_even_on_retry) ... ok
+test_stale_write_and_key_reuse_are_rejected (tests.test_reference.DomainTests.test_stale_write_and_key_reuse_are_rejected) ... ok
+test_duplicate_checks_current_grant_before_returning_artifact (tests.test_reference.ExportTests.test_duplicate_checks_current_grant_before_returning_artifact) ... ok
+test_failure_preserves_good_and_same_key_can_retry (tests.test_reference.ExportTests.test_failure_preserves_good_and_same_key_can_retry) ... ok
+test_balanced_accrual_and_payout_retry (tests.test_reference.FinanceTests.test_balanced_accrual_and_payout_retry) ... ok
+test_unbalanced_key_collision_and_payout_limits (tests.test_reference.FinanceTests.test_unbalanced_key_collision_and_payout_limits) ... ok
+test_webhook_rejects_wrong_account_and_event_with_valid_signature (tests.test_reference.FinanceTests.test_webhook_rejects_wrong_account_and_event_with_valid_signature) ... ok
+test_webhook_signs_raw_body_and_deduplicates (tests.test_reference.FinanceTests.test_webhook_signs_raw_body_and_deduplicates) ... ok
+test_reject_decompression_limits_and_active_content (tests.test_reference.UploadTests.test_reject_decompression_limits_and_active_content) ... ok
+test_reject_type_spoof_and_path_traversal (tests.test_reference.UploadTests.test_reject_type_spoof_and_path_traversal) ... ok
+test_reject_unsafe_xml_and_oversize (tests.test_reference.UploadTests.test_reject_unsafe_xml_and_oversize) ... ok
+test_supported_markdown_and_minimal_docx (tests.test_reference.UploadTests.test_supported_markdown_and_minimal_docx) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.003s
+
+OK
